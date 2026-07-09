@@ -33,7 +33,6 @@
         nodejs
         gcc
         jdk21
-        dummy
         xrender
         egl
         glx
