@@ -33,9 +33,6 @@
         nodejs
         gcc
         jdk21
-        xrender
-        egl
-        glx
 
         fastfetch
         tty-clock

@@ -35,6 +35,21 @@
     enable32Bit = true;
   };
 
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      hplip
+      splix
+      cups-filters
+    ];
+  };
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   hardware.graphics.extraPackages = with pkgs; [
     intel-media-driver
     intel-vaapi-driver
@@ -105,6 +120,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    nerd-fonts
   ]; 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
