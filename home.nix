@@ -61,5 +61,6 @@
         zenity
         unzip
         osu-lazer
+        flutter
     ];
 }
