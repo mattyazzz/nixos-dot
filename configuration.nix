@@ -97,14 +97,14 @@
     stdenv.cc.cc
     zlib
     openssl
-    xorg.libX11
-    xorg.libXext
-    xorg.libXrender
-    xorg.libXrandr
-    xorg.libXi
-    xorg.libXcursor
-    xorg.libXinerama
-    xorg.libXfixes
+    libX11
+    libXext
+    libXrender
+    libXrandr
+    libXi
+    libXcursor
+    libXinerama
+    libXfixes
     libGL
     alsa-lib
     pulseaudio
@@ -120,7 +120,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    nerd-fonts
+    font-awesome
   ]; 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

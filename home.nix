@@ -58,5 +58,8 @@
         pulseaudio
         pavucontrol
         picom
+        zenity
+        unzip
+        osu-lazer
     ];
 }
