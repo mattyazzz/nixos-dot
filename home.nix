@@ -33,6 +33,12 @@
         nodejs
         gcc
         jdk21
+        android-tools
+        (androidenv.composeAndroidPackages {
+          platformVersions = [ "35" ];
+          buildToolsVersions = [ "35.0.0" ];
+          includeEmulator = false;
+        })
 
         fastfetch
         tty-clock
