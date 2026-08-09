@@ -1,0 +1,36 @@
+{
+    // ========================
+    // ==                    ==
+    // ==   the esqueleton   ==
+    // ==                    ==
+    // ========================
+
+    "layer": "top",
+    "position": "top",
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "battery",
+        "tray",
+    ],
+
+    // ========================
+    // ==                    ==
+    // ==    the modules     ==
+    // ==                    ==
+    // ========================
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %d %B %Y}"
+    },
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "tooltip-format": "{capacity}% ({time})",
+        "format-icons": ["", "", "", "", ""]
+    },
+}
