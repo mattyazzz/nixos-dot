@@ -4,7 +4,7 @@
 {
   imports =
     [ 
-      ~/Documents/hardware-configuration.nix
+      /home/matyazy/Documents/hardware-configuration.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
