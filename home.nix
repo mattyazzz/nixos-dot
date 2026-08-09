@@ -19,10 +19,23 @@
         };
     };
     
-    xdg.configFile = {
-        "nvim" = {source = ./mydots/nvim;};
-        "qtile" = {source = ./mydots/qtile;};
-    };
+home.file = {
+  ".config/nvim".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/nixos-dotfiles/mydots/nvim";
+
+  ".config/qtile".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/nixos-dotfiles/mydots/qtile";
+
+  ".config/kitty".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/nixos-dotfiles/mydots/kitty";
+
+  ".config/waybar".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/nixos-dotfiles/mydots/waybar";
+};
 
     home.sessionPath = [
       "$HOME/.local/bin"
