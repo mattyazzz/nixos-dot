@@ -1,5 +1,5 @@
-from libqtile.config import Key
-from libqtile.lazy import lazy
+from libqtile.config import Key # type: ignore
+from libqtile.lazy import lazy # type: ignore
 
 mod = "mod4" 
 terminal = "kitty"
@@ -83,5 +83,5 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "space", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "space", lazy.spawn("rofi -show drun"), desc="Spawn a command using a prompt widget"),
 ]

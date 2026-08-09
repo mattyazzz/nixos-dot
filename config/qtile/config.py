@@ -1,13 +1,19 @@
 import os
 from collections.abc import Callable
 
-import libqtile.resources
-from libqtile import bar, layout, qtile, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Output, Screen
-from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+import libqtile.resources # type: ignore
+import subprocess
+
+from libqtile import layout, qtile, widget, hook # type: ignore
+from libqtile.config import Click, Drag, Group, Key, Match, Output, Screen # type: ignore
+from libqtile.lazy import lazy # type: ignore
+from libqtile.utils import guess_terminal # type: ignore
+from libqtile.backend.wayland import InputConfig # type: ignore
 
 
+wl_input_rules = {
+        "type:keyboard": InputConfig(kb_layout="es"),
+    }
 
 # ===========
 # = modulos =
@@ -58,7 +64,12 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.Bsp(
+        border_focus=["#26718f"],
+        border_normal=["#1b5167"],
+        border_width=2,
+        margin=6,
+    ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -76,70 +87,19 @@ layouts = [
 widget_defaults = dict(
     font="sans",
     fontsize=12,
-    padding=3,
+    padding=0,
 )
 extension_defaults = widget_defaults.copy()
-wal = "/home/matyazy/.config/qtile/modulos/wallpapers/miku ah color wallpaper.jpeg"
-logo = os.path.join(os.path.dirname(libqtile.resources.__file__), "logo.png")
+blu = "/home/matyazy/.config/qtile/modulos/wallpapers/blu.jpg"
+
+@hook.subscribe.startup_once
+def start_waybar():
+    subprocess.Popen(["waybar"])
+    
 screens = [
     Screen(
-        top=bar.Bar(
-            [
-                widget.TextBox( "  "
-
-                ),
-                widget.GroupBox(),
-                widget.Sep(
-                    foreground = '#ffffff'
-                ),
-                widget.Prompt(
-                    prompt = '{prompt}:',
-                    background = "#2e3e5c"
-                ),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                
-                widget.TextBox("haru urara the goat", foreground="#5FFFE4"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Systray(),
-                widget.Sep(
-                    foreground = '#ffffff'
-                ),
-                widget.Clock(format="%a %d/%m/%Y [%I:%M %p]"),
-                widget.Battery(
-                    format = ('{percent:2.0%} {char}'),
-                    charge_char = '⚡︎',
-                    discharge_char = '',
-                    low_char = '!',
-                    update_interval = 1,
-                    low_background = "#ff0000",
-                    low_foreground = "#ffffff",
-                    low_percentage = 0.2,
-                    charging_foreground = "#5FFFE4",
-                ),
-                widget.QuickExit(
-                    default_text = '[ ⏻  ]',
-                    countdown_format = '[ {} ]',
-                ),
-            ],
-            26,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-            background = "#26718f",
-        ),
-        background="#88FFE1",
-        wallpaper=wal,
+        wallpaper=blu,
         wallpaper_mode="fill",
-        # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
-        # By default we handle these events delayed to already improve performance, however your system might still be struggling
-        # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
-        # x11_drag_polling_rate = 60,
     ),
 ]
 
@@ -189,7 +149,6 @@ reconfigure_screens = True
 auto_minimize = True
 
 # When using the Wayland backend, this can be used to configure input devices.
-wl_input_rules = None
 
 # xcursor theme (string or None) and size (integer) for Wayland backend
 wl_xcursor_theme = None

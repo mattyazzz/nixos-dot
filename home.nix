@@ -10,7 +10,7 @@
         enable = true;
         shellAliases = {
             btw = "echo I use nixos, btw";
-            fast = "command clear | fastfetch";
+            fast = "clear && hyfetch";
             volume = "wpctl set-volume @DEFAULT_AUDIO_SINK@";
 
             op-home = "command nvim ~/nixos-dotfiles/home.nix";
@@ -34,13 +34,11 @@
         gcc
         jdk21
         android-tools
-        (androidenv.composeAndroidPackages {
-          platformVersions = [ "35" ];
-          buildToolsVersions = [ "35.0.0" ];
-          includeEmulator = false;
-        })
+        kotlin
 
-        fastfetch
+        fastfetch 
+        waybar
+        hyfetch
         tty-clock
         cmatrix
         xdg-user-dirs
@@ -63,7 +61,6 @@
         busybox
         pulseaudio
         pavucontrol
-        picom
         zenity
         unzip
         osu-lazer
