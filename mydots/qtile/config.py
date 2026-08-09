@@ -151,7 +151,7 @@ auto_minimize = True
 # When using the Wayland backend, this can be used to configure input devices.
 
 # xcursor theme (string or None) and size (integer) for Wayland backend
-wl_xcursor_theme = None
+wl_xcursor_theme = "Bibata-Modern-Ice"
 wl_xcursor_size = 24
 
 idle_timers = []  # type: list

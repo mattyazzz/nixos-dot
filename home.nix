@@ -26,7 +26,16 @@
 
     home.sessionPath = [
       "$HOME/.local/bin"
-];
+    ];
+
+    home.pointerCursor = {
+        gtk.enable = true;
+        x11.enable = true;
+
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Ice";
+        size = 24;
+    };
 
     home.packages = with pkgs; [
         neovim
