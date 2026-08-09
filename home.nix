@@ -18,8 +18,11 @@
             op-flake = "command nvim ~/nixos-dotfiles/flake.nix";
         };
     };
-    home.file.".config/qtfile".source = ./config/qtile;
-    home.file.".config/nvim".source = ./config/nvim;
+    
+    xdg.configFile = {
+        "nvim" = {source = ./dotfiles!/nvim;};
+        "qtile" = {source = ./dotfiles!/qtile;};
+    }
 
     home.sessionPath = [
       "$HOME/.local/bin"
