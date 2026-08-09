@@ -8,13 +8,13 @@
     "layer": "top",
     "position": "top",
     "modules-center": [
-        "clock",
+        "clock"
     ],
     "modules-right": [
         "pulseaudio",
         "network",
         "battery",
-        "tray",
+        "tray"
     ],
 
     // ========================
@@ -32,5 +32,5 @@
         "format": "{capacity}% {icon}",
         "tooltip-format": "{capacity}% ({time})",
         "format-icons": ["", "", "", "", ""]
-    },
+    }
 }
