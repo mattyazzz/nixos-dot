@@ -154,6 +154,9 @@ auto_minimize = True
 wl_xcursor_theme = "Bibata-Modern-Ice"
 wl_xcursor_size = 24
 
+XCURSOR_THEME="Bibata-Modern-Ice" # typ: ignore
+XCURSOR_SIZE=24 # typ: ignore
+
 idle_timers = []  # type: list
 idle_inhibitors = []  # type: list
 
