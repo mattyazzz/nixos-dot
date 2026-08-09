@@ -20,9 +20,9 @@
     };
     
     xdg.configFile = {
-        "nvim" = {source = ./dotfiles!/nvim;};
-        "qtile" = {source = ./dotfiles!/qtile;};
-    }
+        "nvim" = {source = ./mydots/nvim;};
+        "qtile" = {source = ./mydots/qtile;};
+    };
 
     home.sessionPath = [
       "$HOME/.local/bin"
