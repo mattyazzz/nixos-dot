@@ -7,7 +7,7 @@
 
     "layer": "top",
     "position": "top",
-    "width": 100,
+    "width": 1366,
     "modules-left": [
         "custom/logo"
     ],
@@ -28,9 +28,9 @@
     // ========================
 
     "custom/logo": {
-        "format": "",
-        "tooltip": "nixos",
-        "on-click": "kitty -e htop"
+        "format": "",
+        "tooltip": "nixos btw",
+        "on-click": "rofi -show drun"
     },
 
     "clock": {
@@ -41,6 +41,10 @@
     "battery": {
         "format": "{capacity}% {icon}",
         "tooltip-format": "{capacity}% ({time})",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+    "network": {
+        "format-wifi": "{essid}",
+        "format-disconnected": "sin internet, por gil"
     }
 }
