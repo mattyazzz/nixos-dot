@@ -76,6 +76,7 @@
         zenity
         unzip
         osu-lazer
+        tetris
         flutter
     ];
 }

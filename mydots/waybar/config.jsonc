@@ -7,6 +7,10 @@
 
     "layer": "top",
     "position": "top",
+    "width": 100,
+    "modules-left": [
+        "custom/logo"
+    ],
     "modules-center": [
         "clock"
     ],
@@ -22,6 +26,12 @@
     // ==    the modules     ==
     // ==                    ==
     // ========================
+
+    "custom/logo": {
+        "format": "",
+        "tooltip": "nixos",
+        "on-click": "kitty -e htop"
+    },
 
     "clock": {
         "format": "{:%H:%M}",
