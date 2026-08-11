@@ -89,6 +89,7 @@
     libmtp
     android-file-transfer
     vscodium
+    jq
   ];
 
   programs.nix-ld.enable = true;

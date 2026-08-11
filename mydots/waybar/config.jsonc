@@ -9,10 +9,11 @@
     "position": "top",
     "width": 1366,
     "modules-left": [
-        "custom/logo"
+        "custom/logo",
+        "clock"
     ],
     "modules-center": [
-        "clock"
+        "custom/workspaces"
     ],
     "modules-right": [
         "pulseaudio",
@@ -46,5 +47,9 @@
     "network": {
         "format-wifi": "{essid}",
         "format-disconnected": "sin internet, por gil"
+    },
+    "custom/workspaces": {
+        "exec": "/home/matyazy/.config/waybar/scripts/workspaces.sh",
+        "interval": 0.1
     }
 }
