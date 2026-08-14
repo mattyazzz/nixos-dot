@@ -112,7 +112,7 @@ def export_current_workspaces(*args, **kwargs):
         with open(JSON_PATH, "w") as f:
             json.dump(data, f, indent = 4)
     except Exception as e:
-        pass
+        print(f"Error updating workspace JSON: {e}")
 
 @hook.subscribe.setgroup
 def on_setgroup():
