@@ -49,7 +49,7 @@
         "format-disconnected": "sin internet, por gil"
     },
     "custom/workspaces": {
-        "exec": "/home/matyazy/.config/waybar/scripts/workspaces.sh",
+        "exec": "/home/matyazy/.config/waybar/scripts/workspaces.py",
         "interval": 0.1
     }
 }
