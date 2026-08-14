@@ -3,6 +3,7 @@ from collections.abc import Callable
 
 import libqtile.resources # type: ignore
 import subprocess
+import json
 
 from libqtile import layout, qtile, widget, hook # type: ignore
 from libqtile.config import Click, Drag, Group, Key, Match, Output, Screen # type: ignore
@@ -95,7 +96,34 @@ blu = "/home/matyazy/.config/qtile/modulos/wallpapers/blu.jpg"
 @hook.subscribe.startup_once
 def start_waybar():
     subprocess.Popen(["waybar"])
+
+# =======================================================
+# todo esto es para que los workspaces funcionen en qtile
+
+
+JSON_PATH = os.path.expanduser("~/.config/waybar/scripts/workspaces.json")
+
+def export_current_workspaces(*args, **kwargs):
+    try:
+        current_group = qtile.current_screen.name
+        data = {
+            "workspace": current_group
+        }
+        with open(JSON_PATH, "w") as f:
+            json.dump(data, f, indent = 4)
+    except Exception as e:
+        pass
+
+@hook.subscribe.setgroup
+def on_setgroup():
+    export_current_workspaces()
+
+@hook.subscribe.startup_complete
+def on_startup():
+    export_current_workspaces()
     
+# =======================================================
+
 screens = [
     Screen(
         wallpaper=blu,
