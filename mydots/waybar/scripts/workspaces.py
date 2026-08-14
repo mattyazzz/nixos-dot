@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import json
 
 with open('workspaces.json', "r") as archivo:
