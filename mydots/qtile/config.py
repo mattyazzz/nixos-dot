@@ -105,12 +105,17 @@ JSON_PATH = os.path.expanduser("~/.config/waybar/scripts/workspaces.json")
 
 def export_current_workspaces(*args, **kwargs):
     try:
+        os.makedirs(os.path.dirname(JSON_PATH), exist_ok=True)
+
         current_group = qtile.current_screen.name
+
         data = {
             "workspace": current_group
         }
+
         with open(JSON_PATH, "w") as f:
             json.dump(data, f, indent = 4)
+
     except Exception as e:
         print(f"Error updating workspace JSON: {e}")
 
