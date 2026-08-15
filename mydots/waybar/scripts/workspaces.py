@@ -3,10 +3,12 @@
 import os
 import json
 
-with open('workspaces.json', "r") as archivo:
+JSON_PATH = os.path.expanduser("~/.config/waybar/scripts/workspaces.json")
+
+with open(JSON_PATH, "r") as archivo:
     datos=json.load(archivo)
 
-if "workspace" in datos== "1":
+if datos["workspace"] == "1":
     print("estoy en el workspace 1")
 
 # ======================================================
