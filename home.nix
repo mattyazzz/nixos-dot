@@ -19,15 +19,6 @@
         };
     };
     
-    home.file.".config/nvim".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/mydots/nvim";
-    home.file.".config/kitty".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/mydots/kitty";
-    home.file.".config/qtile".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/mydots/qtile";
-    home.file.".config/waybar".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/mydots/waybar";
-
     home.sessionPath = [
       "$HOME/.local/bin"
     ];
