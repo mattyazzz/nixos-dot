@@ -90,6 +90,7 @@
     android-file-transfer
     vscodium
     jq
+    wine
   ];
 
   programs.nix-ld.enable = true;
