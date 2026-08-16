@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # este script esta hecho para crear symlinks, archivos y carpetas necesarias,
 # para que el sistema funcione correctamente, ademas de instalar paquetes necesarios
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "creando symlinks y carpetas necesarias..."
 echo "quieres continuar? (y/n)"
@@ -28,10 +30,10 @@ if [ "$answer" = "y" ]; then
 
     echo "carpetas eliminadas, creando symlinks..."
 
-    ln -s ./mydots/kitty ~/.config/
-    ln -s ./mydots/nvim ~/.config/
-    ln -s ./mydots/qtile ~/.config/
-    ln -s ./mydots/waybar ~/.config/
+    ln -s "${SCRIPT_DIR}/mydots/kitty" ~/.config/
+    ln -s "${SCRIPT_DIR}/mydots/nvim" ~/.config/
+    ln -s "${SCRIPT_DIR}/mydots/qtile" ~/.config/
+    ln -s "${SCRIPT_DIR}/mydots/waybar" ~/.config/
 
     echo "symlinks creados!"
 else
