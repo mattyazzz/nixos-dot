@@ -107,7 +107,7 @@ def export_current_workspaces(*args, **kwargs):
     try:
         os.makedirs(os.path.dirname(JSON_PATH), exist_ok=True)
 
-        current_group = qtile.current_screen.name
+        current_group = qtile.current_group.name
 
         data = {
             "workspace": current_group
