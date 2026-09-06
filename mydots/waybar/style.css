@@ -1,0 +1,16 @@
+window#waybar { 
+    background-color: rgba(28, 77, 123, 0.8);
+    color: #ffffff;
+}
+#custom-logo {
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 13px;
+    margin-left: 5px;
+}
+#clock {
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    font-size: 15px;
+}

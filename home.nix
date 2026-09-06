@@ -73,5 +73,6 @@
         osu-lazer
         tetris
         flutter
+        corefonts
     ];
 }
