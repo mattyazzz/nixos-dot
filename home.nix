@@ -44,6 +44,7 @@
         vscode
         openssl
         fzf
+        quickshell
 
         # ====[ Larp/Fun ]======
         fastfetch

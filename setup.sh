@@ -24,8 +24,10 @@ if [ "$answer" = "y" ]; then
     echo "qtile eliminado"
     rm -rf ~/.config/waybar
     echo "waybar eliminado"
-    rm -rf ~/.config/hyprland
+    rm -rf ~/.config/hypr
     echo "hyprland eliminado"
+    rm -rf ~/.config/quickshell
+    echo "quickshell eliminado"
     echo "esperando..."
     sleep 0.5
 
@@ -35,7 +37,8 @@ if [ "$answer" = "y" ]; then
     ln -s "${SCRIPT_DIR}/mydots/nvim" ~/.config/
     ln -s "${SCRIPT_DIR}/mydots/qtile" ~/.config/
     ln -s "${SCRIPT_DIR}/mydots/waybar" ~/.config/
-    ln -s "${SCRIPT_DIR}/mydots/hyprland" ~/.config/
+    ln -s "${SCRIPT_DIR}/mydots/hypr" ~/.config/
+    ln -s "${SCRIPT_DIR}/mydots/hypr/quickshell" ~/.config/
 
     echo "symlinks creados!"
 else
