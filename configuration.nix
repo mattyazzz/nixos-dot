@@ -66,6 +66,8 @@
 
   programs.firefox.enable = true;
 
+  programs.hyprland.enable = true;
+
   services.flatpak.enable = true;
 
   xdg.portal = {

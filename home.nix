@@ -33,6 +33,7 @@
     };
 
     home.packages = with pkgs; [
+        # ====[ Dev ]===========
         neovim
         ripgrep
         nil
@@ -40,39 +41,49 @@
         nodejs
         gcc
         jdk21
-        android-tools
-        kotlin
-
-        fastfetch 
-        waybar
-        hyfetch
-        tty-clock
-        cmatrix
-        xdg-user-dirs
-        thunar
         vscode
-        mesa-demos
-        kcc
-        p7zip
-        file-roller
-        feh
-        unar
-        zip
-        # ani-cli (no sirves, tonto)
-        mpv
-        yt-dlp
         openssl
         fzf
-        calibre
-        rofi
-        busybox
-        pulseaudio
-        pavucontrol
-        zenity
-        unzip
-        osu-lazer
+
+        # ====[ Larp/Fun ]======
+        fastfetch
+        tty-clock
+        cmatrix
+        hyfetch
         tetris
-        flutter
+
+        # ====[ Desktop ]=======
+        waybar
+        rofi
+        xdg-user-dirs
+        thunar
+        zenity
+
+        # ====[ Audio ]=========
+        pavucontrol
+
+        # ====[ Media ]=========
+        mpv
+        yt-dlp
+        calibre
+
+        # ====[ Utils ]=========
+        file-roller
+        unar
+        busybox
+
+        # ====[ Games ]=========
+        osu-lazer
+
+        # ====[ Graphics ]======
+        mesa-demos
+        feh
+        # ====[ Fonts ]=========
         corefonts
+        
+        
+        kcc
+        # ani-cli (no sirves, tonto)
+        
     ];
 }
