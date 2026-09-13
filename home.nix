@@ -45,6 +45,8 @@
         openssl
         fzf
         quickshell
+        flutter
+        pkg-config
 
         # ====[ Larp/Fun ]======
         fastfetch
@@ -72,6 +74,7 @@
         file-roller
         unar
         busybox
+        rclone
 
         # ====[ Games ]=========
         osu-lazer
