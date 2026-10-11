@@ -91,7 +91,7 @@ widget_defaults = dict(
     padding=0,
 )
 extension_defaults = widget_defaults.copy()
-blu = "/home/matyazy/.config/qtile/modulos/wallpapers/blu.jpg"
+blu = "/home/matyazy/nixos-dotfiles/mydots/images/wallpapers/blu.jpg"
 
 @hook.subscribe.startup_once
 def start_waybar():

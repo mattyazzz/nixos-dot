@@ -47,6 +47,21 @@
         quickshell
         flutter
         pkg-config
+        rustc
+        cargo
+        rust-analyzer
+
+        # ====[ Android ]=======
+
+        (androidenv.composeAndroidPackages {
+          platformVersions = [ "36" ];
+          buildToolsVersions = [ "28.0.3" ];
+          cmdLineToolsVersion = "latest";
+          includeEmulator = false;
+          includeNDK = false;
+          includeSources = false;
+          includeSystemImages = false;
+          }).androidsdk
 
         # ====[ Larp/Fun ]======
         fastfetch

@@ -40,22 +40,17 @@ local terminal    = "kitty"
 local fileManager = "thunar"
 local menu        = "hyprlauncher"
 local rofi        = "rofi -show drun"
+local renpy       = "/home/matyazy/Downloads/renpy-8.5.3-sdkarm/renpy.sh"
 
 
 -------------------
 ---- AUTOSTART ----
 -------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Autostart/
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
--- hl.on("hyprland.start", function () 
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
+hl.on("hyprland.start", function ()
+    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("qs")
+end)
 
 
 -------------------------------
@@ -66,26 +61,6 @@ local rofi        = "rofi -show drun"
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-
-
------------------------
------ PERMISSIONS -----
------------------------
-
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Permissions/
--- Please note permission changes here require a Hyprland restart and are not applied on-the-fly
--- for security reasons
-
--- hl.config({
---   ecosystem = {
---     enforce_permissions = true,
---   },
--- })
-
--- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
--- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
--- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
-
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -122,14 +97,14 @@ hl.config({
         inactive_opacity = 1.0,
 
         shadow = {
-            enabled      = true,
+            enabled      = false,
             range        = 4,
             render_power = 3,
             color        = 0xee1a1a1a,
         },
 
         blur = {
-            enabled   = true,
+            enabled   = false,
             size      = 3,
             passes    = 1,
             vibrancy  = 0.1696,
@@ -273,6 +248,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(rofi))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(renpy))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -364,3 +340,16 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+hl.window_rule({
+    name = "code-opacity",
+    match = { class = "^code$" },
+    opacity = "1 1",
+})
+hl.window_rule({
+    name = "renpy",
+    match = { class = "^renpy$"},
+    float = true,
+})
+
+-- HyprMod managed settings
+require("hyprland-gui")

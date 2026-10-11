@@ -1,0 +1,6 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+}
+
+@theme "/home/matyazy/nixos-dotfiles/mydots/rofi/themes/im-so-green.rasi"

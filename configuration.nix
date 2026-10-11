@@ -12,10 +12,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.android_sdk.accept_license = true;
 
   networking.hostName = "nixos-btw"; # Define your hostname.
 
   networking.networkmanager.enable = true;
+  services.openssh.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Monterrey";
@@ -67,8 +69,13 @@
   programs.firefox.enable = true;
 
   programs.hyprland.enable = true;
+  
+  programs.gpu-screen-recorder.enable = true;
+
+  services.upower.enable = true;
 
   services.flatpak.enable = true;
+
 
   xdg.portal = {
     enable = true;
@@ -93,6 +100,10 @@
     vscodium
     jq
     wine
+    steamcmd
+    qbittorrent
+    hyprpaper
+    gpu-screen-recorder-gtk
   ];
 
   programs.nix-ld.enable = true;
